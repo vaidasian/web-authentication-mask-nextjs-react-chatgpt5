@@ -1,0 +1,9 @@
+node_modules
+.env
+
+app/_app.tsx
+app/api/test.ts
+
+src/generated
+next-env.d.ts
+prisma/migrations

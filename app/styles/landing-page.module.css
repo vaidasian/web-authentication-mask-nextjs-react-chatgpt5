@@ -1,0 +1,124 @@
+.landingPageBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../public/images/hoggi-background-landing.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 10vh;
+}
+
+.loginContainer {
+  background-color: rgb(255, 255, 255, 0.85);
+  padding: 2rem 0.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 400px;
+  width: 90%;
+  color: #ffffff;
+}
+
+.loginContainer input {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  border: 1px solid #ffffff50;
+  border-radius: 6px;
+  background-color: rgba(255,255,255,0.9);
+  color: #000000;
+  font-size: 1rem;
+}
+
+.message {
+  margin-top: 0.5rem;
+  font-weight: 500;
+  color: red;
+}
+
+.loginContainer > button {
+  margin-left: 1rem;
+}
+
+.title {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  color: #222;
+}
+
+.formBox {
+  margin-bottom: 1rem;
+}
+
+.switchButton {
+  margin-top: 1rem;
+  background-color: #b22222; /* dunkles Rot vom Bild */
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.switchButton:hover {
+  background-color: #8b1a1a;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.inputField {
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+/* Buttons allgemein */
+.button {
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* Primary Button (z. B. Login, Registrieren) */
+.buttonPrimary {
+  background-color: #0077ff;
+  color: white;
+}
+
+.buttonPrimary:hover {
+  background-color: #005fd1;
+  transform: translateY(-2px);
+}
+
+/* Secondary Button (z. B. Zurück, Abbrechen) */
+.buttonSecondary {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.buttonSecondary:hover {
+  background-color: #cacaca;
+  transform: translateY(-2px);
+}
