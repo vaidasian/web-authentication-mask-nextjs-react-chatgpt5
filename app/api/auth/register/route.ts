@@ -24,7 +24,7 @@ export async function POST(req: Request) {
     const activationToken = crypto.randomBytes(32).toString("hex");
     const activationExpires = new Date(Date.now() + 24 * 60 * 60 * 1000);
 
-    const user = await prisma.user.create({
+    const _user = await prisma.user.create({
       data: {
         email,
         username,

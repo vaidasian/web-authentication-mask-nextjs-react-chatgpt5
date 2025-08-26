@@ -1,4 +1,4 @@
-# !bin/bash
+#!/bin/bash
 
 # cleanup resources
 rm -rf node_modules package-lock.json .next prisma/generated

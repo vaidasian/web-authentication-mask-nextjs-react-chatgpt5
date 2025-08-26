@@ -1,9 +1,6 @@
 # start server
-```bash
-npm i
-npx prisma generate
-npx prisma migrate dev --name init
-npm run dev
+```console
+bash ./scripts/start-service.sh
 ```
 
 # install psql
