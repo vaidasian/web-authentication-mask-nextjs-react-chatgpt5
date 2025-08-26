@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import LoginForm from "../src/frontend/components/LoginForm";
-import RegisterForm from "../src/frontend/components/RegisterForm";
-import styles from "./styles/landing-page.module.css";
-import Button from "../src/frontend/components/ui/Button";
+import LoginForm from "@/components/auth/LoginForm";
+import RegisterForm from "@/components/auth//RegisterForm";
+import styles from "@/components/auth/landing-page.module.css";
+import Button from "@/components/ui/Button";
 
 export default function LandingPage() {
   const [showRegister, setShowRegister] = useState(false);

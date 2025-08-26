@@ -1,8 +1,7 @@
-// DashboardPage.tsx
 "use client";
 
 import { useState } from "react";
-import styles from "../styles/dashboard.module.css";
+import styles from "@/components/dashboard/dashboard.module.css";
 
 export default function DashboardPage() {
   const [caughtPlayers, setCaughtPlayers] = useState(0);
@@ -16,7 +15,7 @@ export default function DashboardPage() {
 
   return (
     <div className={styles.dashboardContainer}>
-      {/* Fortschrittsbalken als Feldhockeyschläger */}
+      {/* progress bar as hockey stick */}
       <div className={styles.progressBar}>
         {Array.from({ length: maxPlayers }).map((_, index) => (
           <div
@@ -28,14 +27,14 @@ export default function DashboardPage() {
         ))}
       </div>
 
-      {/* Interaktiver Ball */}
+      {/* interactive ball */}
       <div className={styles.hockeyBall} onClick={handleBallClick}>
         <span className={styles.logo}>Logo</span>
       </div>
 
       {caughtPlayers === maxPlayers && (
         <div className={styles.accountUnlocked}>
-          Dein Manager-Account ist freigegeben!
+          Congratulations, you collected a team full of legends and are now ready for the game!
         </div>
       )}
     </div>

@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import styles from "../../../app/styles/landing-page.module.css";
-import PrimaryButton from "./ui/Button";
+import styles from "./landing-page.module.css";
+import PrimaryButton from "../ui/Button";
 
 export default function RegisterForm() {
   const [email, setEmail] = useState("");

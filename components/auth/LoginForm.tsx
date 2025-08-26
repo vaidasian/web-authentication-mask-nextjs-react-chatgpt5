@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { useAuth } from "../contexts/AuthContext";
-import { loginUser } from "../services/api";
-import styles from "../../../app/styles/landing-page.module.css";
-import PrimaryButton from "./ui/Button";
+import { useAuth } from "@/contexts/AuthContext";
+import { loginUser } from "@/services/auth";
+import styles from "@/components/auth/landing-page.module.css";
+import PrimaryButton from "@/components/ui/Button";
 
 export default function LoginForm() {
   const [username, setUsername] = useState("");
