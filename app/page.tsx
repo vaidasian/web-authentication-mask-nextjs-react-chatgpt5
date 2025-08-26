@@ -1,24 +1,23 @@
 "use client";
 
-import { useState } from "react";
-import LoginForm from "@/components/auth/LoginForm";
-import RegisterForm from "@/components/auth//RegisterForm";
+import Link from "next/link";
 import styles from "@/components/auth/landing-page.module.css";
 import Button from "@/components/ui/Button";
 
 export default function LandingPage() {
-  const [showRegister, setShowRegister] = useState(false);
-
   return (
     <div className={styles.landingPageBackground}>
-      <div className={styles.loginContainer}>
-        {showRegister ? <RegisterForm /> : <LoginForm />}
+      <div className={styles.loginContainer} data-e2e="container-login">
+        <h1>Welcome to the Game</h1>
+        <p>Login or register a new manager to start playing!</p>
 
-        <Button
-          onClick={() => setShowRegister(!showRegister)}
-          label={showRegister ? "Back To Game" : "Create New Manager"}
-          variant="secondary"
-        />
+        <Link href="/auth/login" passHref>
+          <Button label="Login" variant="primary" data-e2e="btn-login" />
+        </Link>
+
+        <Link href="/auth/register" passHref>
+          <Button label="Create New Manager" variant="secondary" data-e2e="btn-register" />
+        </Link>
       </div>
     </div>
   );

@@ -41,7 +41,7 @@ export default function RegisterForm() {
       return;
     }
 
-    const res = await fetch("/api/register", {
+    const res = await fetch("/api/auth/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, username, password }),
@@ -61,7 +61,7 @@ export default function RegisterForm() {
   };
 
   return (
-    <form className={styles.loginForm} onSubmit={handleRegister}>
+    <form className={styles.loginForm} onSubmit={handleRegister} data-e2e="form-register">
       <input
         type="text"
         placeholder="Email"
@@ -69,6 +69,7 @@ export default function RegisterForm() {
         onChange={(e) => setEmail(e.target.value)}
         className={styles.inputField}
         required
+        data-e2e="input-email"
       />
       <input
         type="text"
@@ -77,6 +78,7 @@ export default function RegisterForm() {
         onChange={(e) => setUsername(e.target.value)}
         className={styles.inputField}
         required
+        data-e2e="input-username"
       />
       <input
         type="password"
@@ -85,6 +87,7 @@ export default function RegisterForm() {
         onChange={(e) => setPassword(e.target.value)}
         className={styles.inputField}
         required
+        data-e2e="input-password"
       />
       <input
         type="password"
@@ -93,10 +96,11 @@ export default function RegisterForm() {
         onChange={(e) => setPasswordConfirm(e.target.value)}
         className={styles.inputField}
         required
+        data-e2e="input-password-confirm"
       />
-      <PrimaryButton type="submit" label="Create New Manager" />
+      <PrimaryButton type="submit" data-e2e="btn-register" label="Create New Manager" />
 
-      {message && <p className={styles.message}>{message}</p>}
+      {message && <p className={styles.message} data-e2e="msg">{message}</p>}
     </form>
   );
 }

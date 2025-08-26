@@ -5,3 +5,4 @@ src/generated
 next-env.d.ts
 prisma/migrations
 .next
+test-results

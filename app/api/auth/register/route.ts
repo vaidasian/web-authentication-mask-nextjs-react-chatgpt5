@@ -45,7 +45,7 @@ export async function POST(req: Request) {
       },
     });
 
-    const activationLink = `http://localhost:3000/api/activate?token=${activationToken}`;
+    const activationLink = `http://localhost:3000/api/auth/activate?token=${activationToken}`;
 
     await transporter.sendMail({
       from: '"hoggi" <noreply@example.com>',

@@ -20,3 +20,8 @@ psql -U hoggi_admin -d hoggi
 SELECT * FROM "User";
 DELETE FROM "User" WHERE email = 'test@example.com';
 ````
+
+# run e2e tests
+```console
+bash ./scripts/e2e-test.sh
+```

@@ -25,7 +25,7 @@ export default function LoginForm() {
   };
 
   return (
-    <form className={styles.loginForm} onSubmit={handleLogin}>
+    <form className={styles.loginForm} onSubmit={handleLogin} data-e2e="form-login">
       <input
         type="text"
         placeholder="Manager Name"
@@ -33,6 +33,7 @@ export default function LoginForm() {
         onChange={(e) => setUsername(e.target.value)}
         className={styles.inputField}
         required
+        data-e2e="input-username"
       />
       <input
         type="password"
@@ -41,8 +42,9 @@ export default function LoginForm() {
         onChange={(e) => setPassword(e.target.value)}
         className={styles.inputField}
         required
+        data-e2e="input-password"
       />
-      <PrimaryButton type="submit" label="Go!" />
+      <PrimaryButton type="submit" data-e2e="btn-login" label="Go!" />
     </form>
   );
 }

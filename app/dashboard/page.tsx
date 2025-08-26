@@ -16,7 +16,7 @@ export default function DashboardPage() {
   return (
     <div className={styles.dashboardContainer}>
       {/* progress bar as hockey stick */}
-      <div className={styles.progressBar}>
+      <div className={styles.progressBar} data-e2e="progress-bar">
         {Array.from({ length: maxPlayers }).map((_, index) => (
           <div
             key={index}
@@ -28,12 +28,12 @@ export default function DashboardPage() {
       </div>
 
       {/* interactive ball */}
-      <div className={styles.hockeyBall} onClick={handleBallClick}>
+      <div className={styles.hockeyBall} onClick={handleBallClick} data-e2e="hockey-ball">
         <span className={styles.logo}>Logo</span>
       </div>
 
       {caughtPlayers === maxPlayers && (
-        <div className={styles.accountUnlocked}>
+        <div className={styles.accountUnlocked} data-e2e="msg-success">
           Congratulations, you collected a team full of legends and are now ready for the game!
         </div>
       )}
