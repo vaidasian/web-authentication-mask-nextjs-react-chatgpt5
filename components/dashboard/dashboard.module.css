@@ -1,0 +1,68 @@
+.dashboardContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('/images/hoggi-background-landing.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.progressBar {
+  display: flex;
+  gap: 5px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  height: 20px;
+}
+
+.progressStep {
+  flex: 1;
+  background-color: rgba(255,255,255,0.3);
+  border-radius: 10px;
+  height: 100%;
+}
+
+.progressStep.activeStep {
+  background-color: #ffd700;
+}
+
+.hockeyBall {
+  width: 150px;
+  height: 150px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  background-image: radial-gradient(circle 5px, #ddd 20%, transparent 21%);
+  background-size: 30px 30px;
+}
+
+.logo {
+  font-weight: bold;
+  color: #007bff;
+}
+
+.accountUnlocked {
+  position: absolute;
+  bottom: 50px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffd700;
+}
