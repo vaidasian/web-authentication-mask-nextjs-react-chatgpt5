@@ -12,7 +12,7 @@ test.describe("Registration flow", () => {
 
   test("user performs invalid registration", async ({ page }) => {
     await registerPage.register(
-      "test@test.com",
+      "test@@test.com",
       TEST_USER.username,
       TEST_USER.password,
       TEST_USER.password

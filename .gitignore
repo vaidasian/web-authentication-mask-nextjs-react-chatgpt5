@@ -1,8 +1,12 @@
 node_modules
 .env
+.vscode
+.next
 
 src/generated
 next-env.d.ts
+
 prisma/migrations
-.next
+prisma/*.sql
+
 test-results

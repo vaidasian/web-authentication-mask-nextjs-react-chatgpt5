@@ -9,7 +9,8 @@
     "start": "next start",
     "lint": "next lint",
     "test": "npx playwright test",
-    "test:ui": "playwright test --ui"
+    "test:ui": "playwright test --ui",
+    "db:seed": "prisma db seed"
   },
   "dependencies": {
     "@prisma/client": "^6.14.0",
