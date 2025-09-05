@@ -7,6 +7,6 @@ src/generated
 next-env.d.ts
 
 prisma/migrations
-prisma/*.sql
+prisma/*session.sql
 
 test-results

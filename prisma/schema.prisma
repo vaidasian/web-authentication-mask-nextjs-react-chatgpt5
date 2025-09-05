@@ -23,8 +23,3 @@ model User {
   activationExpires DateTime?
   createdAt        DateTime @default(now())
 }
-
-generator seed {
-  provider = "ts-node"
-  output   = "./prisma/seed.ts"
-}

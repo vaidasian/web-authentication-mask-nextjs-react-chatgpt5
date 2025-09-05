@@ -13,9 +13,9 @@ jobs:
 
     env:
       NODE_ENV: test
-      DATABASE_URL: postgresql://postgres:postgres@localhost:5432/hoggi_test?schema=public
-      USERNAME: testuser
-      EMAIL: test@example.com
+      DATABASE_URL: postgresql://${{ secrets.PG_USER }}:${{ secrets.PG_PASS }}@localhost:5432/hoggi_test?schema=public
+      EMAIL: ${{ secrets.SMTP_USER }}
+      USERNAME: ${{ secrets.TEST_USER }}
       PASSWORD: ${{ secrets.TEST_PASSWORD }}
       SMTP_USER: ${{ secrets.SMTP_USER }}
       SMTP_PASS: ${{ secrets.SMTP_PASS }}
@@ -24,13 +24,13 @@ jobs:
       postgres:
         image: postgres:15
         env:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
+          PG_USER: ${{ secrets.PG_USER }}
+          PG_PASS: ${{ secrets.PG_PASS }}
           POSTGRES_DB: hoggi_test
         ports:
           - 5432:5432
         options: >-
-          --health-cmd="pg_isready -U postgres"
+          --health-cmd="pg_isready -U $PG_USER"
           --health-interval=10s
           --health-timeout=5s
           --health-retries=5
@@ -44,7 +44,7 @@ jobs:
           cache: npm
 
       - name: Install dependencies
-        run: npm ci --ignore-scripts --verbose
+        run: npm ci
 
       - name: Install Playwright browsers
         run: npx playwright install chromium --with-deps
@@ -52,9 +52,11 @@ jobs:
       - name: Run migrations
         run: npx prisma migrate deploy
 
-      - name: Seed database
-        run: npm run db:seed
-        if: hashFiles('prisma/seed.ts') != ''
+      - name: Restore DB dump
+        run: pg_restore --no-owner --username=$PG_USER --dbname=hoggi_test prisma/hoggi_dump.sql
+        env:
+          PG_USER: ${{ secrets.PG_USER }}
+          PG_PASS: ${{ secrets.PG_PASS }}
 
       - name: Build app
         run: npm run build
