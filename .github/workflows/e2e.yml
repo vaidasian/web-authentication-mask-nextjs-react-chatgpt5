@@ -13,7 +13,7 @@ jobs:
 
     env:
       NODE_ENV: test
-      DATABASE_URL: postgresql://${{ secrets.PG_USER }}:${{ secrets.PG_PASS }}@localhost:5432/hoggi_test?schema=public
+      DATABASE_URL: postgresql://postgres:postgres@localhost:5432/hoggi_test?schema=public
       EMAIL: ${{ secrets.SMTP_USER }}
       USERNAME: ${{ secrets.TEST_USER }}
       PASSWORD: ${{ secrets.TEST_PASSWORD }}
@@ -53,10 +53,9 @@ jobs:
         run: npx prisma migrate deploy
 
       - name: Restore DB dump
-        run: pg_restore --no-owner --username=$PG_USER --dbname=hoggi_test prisma/hoggi_dump.sql
+        run: pg_restore --no-owner --username=postgres --dbname=hoggi_test prisma/hoggi_dump.sql
         env:
-          PG_USER: ${{ secrets.PG_USER }}
-          PG_PASS: ${{ secrets.PG_PASS }}
+          POSTGRES_PASSWORD: postgres
 
       - name: Build app
         run: npm run build
